@@ -32,19 +32,20 @@ jobs:
         uses: sparkfabrik/ios-build-action@v1.1.0
         with:
           # Project path
+          # project-path: App.xcodeproj
           project-path: mobilesdk/ios/
           # Base64 encoded p12 key
-          # p12-key-base64: # optional
+          p12-key-base64: ${{ secrets.P12_KEY_BASE64 }}
           # Base64 encoded certificate for the p12 key
-          # p12-cer-base64: # optional
+          p12-cer-base64: ${{ secrets.P12_CER_BASE64 }}
           # Base64 encoded p12 file (key + cert)
           # p12-base64: # optional
           # Base64 encoded mobileprovision file
-          # mobileprovision-base64: 
+          mobileprovision-base64: ${{ secrets.MOBILEPROVISION_BASE64 }}
           # For example, iOS Distribution
-          # code-signing-identity: 
+          code-signing-identity: ${{ secrets.CODE_SIGNING_IDENTITY }}
           # Team id
-          # team-id: 
+          team-id: ${{ secrets.TEAM_ID }}
           # Workspace path
           # workspace-path: # optional, default is 
           # Choose app-store, ad-hoc, package, enterprise, development, or developer-id
